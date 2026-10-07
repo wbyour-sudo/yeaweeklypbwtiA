@@ -4,15 +4,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home', [
-        'title' => 'home',
+        'title' => 'Home',
     ]);
 });
 
 Route::get('/profile', function () {
     return view('profile', [
         'title' => 'Profile',
-        'name' => 'Abelare',
-        'nim' => '13242520033',
+        'name' => 'Yanuar Eka',
+        'nim' => '13242520002',
         'prodi' => 'Teknologi Informasi',
     ]);
 });
