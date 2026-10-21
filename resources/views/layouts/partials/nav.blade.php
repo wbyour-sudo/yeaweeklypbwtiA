@@ -1,16 +1,24 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark mb-4">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">WEB TI</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link {{ $title === 'Home' ? 'active' : '' }}" aria-current="page" href="/">Home</a>
-        <a class="nav-link {{ $title === 'Berita' ? 'active' : '' }}" href="/berita">Berita</a>
-        <a class="nav-link {{ $title === 'Profile' ? 'active' : '' }}" href="/profile">Profile</a>
-        <a class="nav-link {{ $title === 'Contact' ? 'active' : '' }}" href="/contact">Contact</a>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">WEB TI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="item">
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
+                </li>
+                <li class="item">
+                    <a class="nav-link {{ Request::is('berita*') ? 'active' : '' }}" href="/berita">Berita</a>
+                </li>
+                <li class="item">
+                    <a class="nav-link {{ Request::is('profile') ? 'active' : '' }}" href="/profile">Profile</a>
+                </li>
+                <li class="item">
+                    <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
