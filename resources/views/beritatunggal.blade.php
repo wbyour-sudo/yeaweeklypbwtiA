@@ -2,16 +2,21 @@
 
 @section('content')
     <div class="container mt-4">
-        <div class="text-center mb-4">
-            <h1>{{ $singlenews['judul'] }}</h1>
-            <h5 class="text-muted">Penulis: {{ $singlenews['penulis'] }}</h5>
-            <small class="text-muted">{{ \Carbon\Carbon::parse($singlenews['tanggal'])->format('d M Y') }}</small>
+        <h1 class="mb-3">{{ $berita->judul }}</h1>
+        
+        <p class="text-muted">
+            Ditulis oleh: <strong>{{ $berita->penulis }}</strong> | 
+            Diposting pada {{ $berita->created_at->format('d M Y') }}
+        </p>
+
+        <hr>
+
+        <div class="content mt-3">
+            <p>{{ $berita->konten }}</p>
         </div>
 
-        <div class="text-justify">
-            <p>{{ $singlenews['isi'] }}</p>
+        <div class="mt-4">
+            <a href="/berita" class="btn btn-secondary">&larr; Kembali ke Daftar Berita</a>
         </div>
-
-        <a href="/berita">Kembali</a>
     </div>
 @endsection
